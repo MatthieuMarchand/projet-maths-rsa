@@ -1,19 +1,13 @@
-import random
-
 from sympy import mod_inverse
 
 
-# This is a pseudo random function for demo purposes
-def generate_prime():
-    prime_numbers = [101, 103, 107, 109, 113, 127, 131, 137, 139, 149]
-    return random.choice(prime_numbers)
+# This is a fake random function for demo purposes
+def generate_prime_pair():
+    return [101, 103]
 
 
 def generate_keys():
-    p = generate_prime()
-    q = generate_prime()
-    while p == q:
-        q = generate_prime()
+    p, q = generate_prime_pair()
 
     N = p * q
     n = (p - 1) * (q - 1)
