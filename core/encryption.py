@@ -8,7 +8,9 @@ def encrypt(message, public_key):
     return encrypted_message
 
 
-def decrypt(encrypted_message, private_key, N):
-    reverse_map = {idx + 1: char for idx, char in enumerate(dic)}
-    decrypted_message = ''.join(reverse_map[(num ** private_key) % N] for num in encrypted_message)
-    return decrypted_message
+def decrypt(encrypted_message, private_key, public_key):
+    N, c = public_key
+    
+    reverse_map = {index + 1: char for index, char in enumerate(dic)}
+    message = ''.join(reverse_map[(num ** private_key) % N] for num in encrypted_message)
+    return message

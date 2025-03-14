@@ -32,4 +32,8 @@ def generate_keys():
         c = random.randint(2, n - 1)
 
     d = mod_inverse(c, n)
-    return (N, c), d
+
+    public_key = (N, c)
+    private_key = d
+
+    return public_key, private_key
