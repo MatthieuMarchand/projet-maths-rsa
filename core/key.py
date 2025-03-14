@@ -1,5 +1,4 @@
 import random
-from math import gcd
 
 from sympy import mod_inverse
 
@@ -19,9 +18,7 @@ def generate_keys():
     N = p * q
     n = (p - 1) * (q - 1)
 
-    c = random.randint(2, n - 1)
-    while gcd(c, n) != 1:
-        c = random.randint(2, n - 1)
+    c = 65537
 
     d = mod_inverse(c, n)
 
