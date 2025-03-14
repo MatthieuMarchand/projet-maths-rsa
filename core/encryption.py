@@ -1,4 +1,4 @@
-dic = "abcdefghijklmnopqrstuvwxyz!?.' "
+dic = "abcdefghijklmnopqrstuvwxyz !?.'"
 
 
 def encrypt(message, public_key):
