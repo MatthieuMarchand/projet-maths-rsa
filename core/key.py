@@ -10,7 +10,6 @@ def generate_prime(min_val=10_000, max_val=99_999):
             return num
 
 
-# This is a fake random function for demo purposes
 def generate_prime_pair():
     p = generate_prime()
     q = generate_prime()
