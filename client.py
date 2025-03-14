@@ -1,7 +1,8 @@
 import socket
+
 import core.encryption
 
-HOST = '127.0.0.1'
+HOST = input('IP du serveur: ')
 PORT = 65432
 
 # Se connecter au serveur

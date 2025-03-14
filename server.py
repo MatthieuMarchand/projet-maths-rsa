@@ -1,8 +1,9 @@
 import socket
-import core.key
-import core.encryption
 
-HOST = '127.0.0.1'
+import core.encryption
+import core.key
+
+HOST = input('IP du serveur: ')
 PORT = 65432
 
 # "Clé publique" et privée générées par le serveur
