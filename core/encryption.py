@@ -1,10 +1,21 @@
+import unicodedata
+
 dic = "abcdefghijklmnopqrstuvwxyz !?.'"
+
+
+def strip_accents(s):
+    return ''.join(c for c in unicodedata.normalize('NFD', s)
+                   if unicodedata.category(c) != 'Mn')
+
+
+def safe_string(string):
+    return ''.join(char if (char in dic) else "" for char in strip_accents(string))
 
 
 def encrypt(message, public_key):
     N, c = public_key
     char_map = {char: idx + 1 for idx, char in enumerate(dic)}
-    encrypted_message = [pow(char_map[char], c, N) for char in message]
+    encrypted_message = [pow(char_map[char], c, N) for char in safe_string(message)]
     return encrypted_message
 
 
